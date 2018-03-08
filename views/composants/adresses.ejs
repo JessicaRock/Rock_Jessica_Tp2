@@ -19,7 +19,7 @@
 							<th><a href=/trier/courriel/<%= ordre_url %> ><%= __('courriel') %></a></th>
 							<th></th>
 							<th>
-								<a id="ajouter" href=/ajouter> <%= __('ajouter') %> </a>
+								<a id="ajouter" > <%= __('ajouter') %> </a>
 							</th>
 						</tr>
 					<% } %>
@@ -55,7 +55,7 @@
 		<input type="hidden" name="courriel">
 	</form>
 	<h1><%= __('inscription') %></h1>
-	<form name="formAjout" action="/ajouter" method="GET">
+	<form name="formAjout" action="/ajouter_ajax" method="GET">
 		<label>
 			<%= __('prenom') %>:
 			<input type="text" name="prenom">
