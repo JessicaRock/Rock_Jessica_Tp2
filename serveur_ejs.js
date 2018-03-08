@@ -119,7 +119,7 @@ app.post('/modifier', function(req, res) {
 
 app.post('/modifier_ajax', (req,res) => {
    req.body._id = ObjectID(req.body._id)
-
+   
    db.collection('adresse').save(req.body, (err, result) => {
    if (err) return console.log(err)
         console.log('sauvegarder dans la BD')
@@ -141,6 +141,19 @@ app.get('/supprimer/:id', (req, res) => {
         res.redirect('/membres'); // redirige vers la route qui affiche la collection
     });
 });
+
+
+app.post('/supprimer_ajax', (req, res) => {
+    console.log('***********')
+    console.log(req.body)
+    req.body._id = ObjectID(req.body._id);
+    db.collection('adresse').findOneAndDelete({"_id": req.body._id}, (err, resultat) => {
+
+    if (err) return console.log(err)
+        console.log(resultat)
+        res.send(JSON.stringify(req.body));
+    })
+})
 
 
 
