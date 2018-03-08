@@ -19,6 +19,7 @@ const util = require("util");
 const peupler = require('./mes_modules/peupler');
 
 app.use(express.static('public'));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(i18n.init);
@@ -75,19 +76,6 @@ app.get('/ajouter', function(req, res) {
     });
 });
 
-app.post('/ajouter_ajax', (req,res) => {
-   req.body._id = ObjectID(req.body._id)
-
-   db.collection('adresse').save(req.body, (err, result) => {
-   if (err) return console.log(err)
-        console.log('sauvegarder dans la BD')
-        res.send(JSON.stringify(req.body));
-        // res.status(204)
-   })
-})
-
-
-
 /////////////////////////////////////////////////////////////////////////// MODIFIER
 app.post('/modifier', function(req, res) {
     /*
@@ -113,6 +101,18 @@ app.post('/modifier', function(req, res) {
 });
 
 
+app.post('/modifier_ajax', (req,res) => {
+   req.body._id = ObjectID(req.body._id)
+
+   db.collection('adresse').save(req.body, (err, result) => {
+   if (err) return console.log(err)
+        console.log('sauvegarder dans la BD')
+        res.send(JSON.stringify(req.body));
+        // res.status(204)
+   })
+})
+
+
 
 
 /////////////////////////////////////////////////////////////////////////// SUPPRIMER
@@ -125,9 +125,6 @@ app.get('/supprimer/:id', (req, res) => {
         res.redirect('/membres'); // redirige vers la route qui affiche la collection
     });
 });
-
-
-
 
 
 

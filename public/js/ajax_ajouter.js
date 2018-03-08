@@ -5,10 +5,10 @@ oBtnAjouter.addEventListener('click', ()=>{
 	xhr.open('POST', "ajouter_ajax", true);
 
 	data = {
-		"nom" : "",
-		"prenom" : "",
-		"telephone" : "",
-		"courriel" : ""
+		"nom" : "nom",
+		"prenom" : "prenom",
+		"telephone" : "telephone",
+		"courriel" : "courriel"
 	}
 
 	console.log(data)
@@ -38,12 +38,14 @@ function traiterRequest(e) {
 
 		for(elm of aMembre) {
 			let oTd = document.createElement("td");
-			oTd.innerHTML = elm;
 			if(aMembre.indexOf(elm) != 0) {
 				oTd.setAttribute('contenteditable', true);
+			} else {
+				oTd.innerHTML = elm;
 			}
 			oTr.appendChild(oTd);
 		}
+
 		oTr.innerHTML += "<td><a href='#'' class='modifier'> <%= __('modifier') %></a></td><td><a class='supprimer' ><%= __('supprimer') %></a></td>";
 
 		oTr.style.backgroundColor = '#62bdce';

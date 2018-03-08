@@ -19,7 +19,7 @@
 							<th><a href=/trier/courriel/<%= ordre_url %> ><%= __('courriel') %></a></th>
 							<th></th>
 							<th>
-								<a href=/ajouter> <%= __('ajouter') %> </a>
+								<a id="ajouter" href=/ajouter> <%= __('ajouter') %> </a>
 							</th>
 						</tr>
 					<% } %>
@@ -33,7 +33,7 @@
 						<td contenteditable><%= elm.telephone %></td>
 						<td contenteditable><%= elm.courriel %></td>
 						<td><a class="modifier"> <%= __('modifier') %></a></td>
-						<td><a href=/supprimer/<%= elm._id %> > <%= __('supprimer') %> </a></td>
+						<td><a class="supprimer" href=/supprimer/<%= elm._id %> > <%= __('supprimer') %> </a></td>
 					</tr>
 				<% } %>
 		</table>
@@ -76,4 +76,6 @@
 	</form>
 </div>
 
-<script type="text/javascript" src="/js/modifier.js"></script>
+<script type="text/javascript" src="js/ajax_ajouter.js"></script>
+<script type="text/javascript" src="js/ajax_modifier.js"></script>
+<script type="text/javascript" src="js/ajax_supprimer.js"></script>
