@@ -12,5 +12,7 @@
 	"courriel": "E-mail",
 	"ajouter": "Add",
 	"modifier": "Register (modify)",
-	"supprimer": "Delete"
+	"supprimer": "Delete",
+	"rechercher": "Find",
+	"envoyer": "Submit"
 }

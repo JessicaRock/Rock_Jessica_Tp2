@@ -3,7 +3,7 @@
 	<% if(membres.length != 0) { %>
 		<form action="/rechercher" method="POST" name="frmRecherche">
 			<input type="text" name="recherche">
-			<input type="submit" value="Rechercher">
+			<input type="submit" value="<%= __('rechercher') %>">
 		</form>
 		<table class="tableau">
 			<% let noLigne = 0 %>
@@ -72,7 +72,7 @@
 			<%= __('courriel') %>:
 			<input type="text" name="courriel">
 		</label>
-		<input type="submit" value="Submit" class="bouton">
+		<input type="submit" value="<%= __('envoyer') %>" class="bouton">
 	</form>
 </div>
 
