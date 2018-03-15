@@ -14,5 +14,6 @@
 	"modifier": "Enregistrer (modifier)",
 	"supprimer": "Supprimer",
 	"rechercher": "Rechercher",
-	"envoyer": "Envoyer"
+	"envoyer": "Envoyer",
+	"aucunMembre": "Aucun membre n'est enregistré."
 }

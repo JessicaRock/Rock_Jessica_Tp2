@@ -14,5 +14,6 @@
 	"modifier": "Register (modify)",
 	"supprimer": "Delete",
 	"rechercher": "Find",
-	"envoyer": "Submit"
+	"envoyer": "Submit",
+	"aucunMembre": "There are no members registered."
 }

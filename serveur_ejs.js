@@ -1,6 +1,13 @@
 const express = require('express');
 const fs = require("fs");
 const app = express();
+
+
+// Ajouter la librairie socket.io
+const server = require('http').createServer(app);
+const io = require('./mes_modules/chat_socket').listen(server);
+
+
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient; // le pilote MongoDB
 const ObjectID = require('mongodb').ObjectID;
@@ -65,16 +72,6 @@ app.get('/membres', (req, res) => {
 ////////////////////////// AJOUTER - MODIFIER - SUPPRIMER //////////////////////////
 
 /////////////////////////////////////////////////////////////////////////// AJOUTER
-app.get('/ajouter', function(req, res) {
-
-    db.collection('adresse').save(req.query, (err, result) => {
-
-        if (err) return console.log(err);
-        console.log('sauvegarder dans la BD');
-        res.redirect('/membres');
-
-    });
-});
 
 app.post('/ajouter_ajax', (req,res) => {
    console.log(req.body)
@@ -93,33 +90,10 @@ app.post('/ajouter_ajax', (req,res) => {
 
 
 /////////////////////////////////////////////////////////////////////////// MODIFIER
-app.post('/modifier', function(req, res) {
-    /*
-    let oModif = {
-        "_id": ObjectID(req.body['_id']),
-        nom: req.body.nom,
-        prenom: req.body.prenom,
-        telephone: req.body.telephone,
-        courriel: req.body.courriel
-    };
-    */
-    
-    console.log('/modifier');
-    req.body._id = ObjectID(req.body._id)
-
-    db.collection('adresse').save(req.body, (err, result) => {
-
-        if (err) return console.log(err);
-        console.log('sauvegarder dans la BD');
-        res.redirect('/membres');
-
-    });
-});
-
 
 app.post('/modifier_ajax', (req,res) => {
    req.body._id = ObjectID(req.body._id)
-   
+
    db.collection('adresse').save(req.body, (err, result) => {
    if (err) return console.log(err)
         console.log('sauvegarder dans la BD')
@@ -132,21 +106,12 @@ app.post('/modifier_ajax', (req,res) => {
 
 
 /////////////////////////////////////////////////////////////////////////// SUPPRIMER
-app.get('/supprimer/:id', (req, res) => {
-
-    let id = req.params.id;
-    db.collection('adresse').findOneAndDelete({ "_id": ObjectID(req.params.id) }, (err, resultat) => {
-
-        if (err) return console.log(err);
-        res.redirect('/membres'); // redirige vers la route qui affiche la collection
-    });
-});
-
 
 app.post('/supprimer_ajax', (req, res) => {
     console.log('***********')
-    console.log(req.body)
-    req.body._id = ObjectID(req.body._id);
+    console.log(typeof req.body._id)
+    console.log(ObjectID(req.body._id))
+    req.body._id = ObjectID(JSON.parse(req.body._id));
     db.collection('adresse').findOneAndDelete({"_id": req.body._id}, (err, resultat) => {
 
     if (err) return console.log(err)
@@ -187,6 +152,12 @@ app.get('/:locale(en|fr)', (req, res) =>{
     res.cookie('langueChoisie', req.params.locale);
     
     res.redirect(req.get("referer"));
+})
+
+
+/////////////////////////////////////////////////////////////////////////// CHAT
+app.get('/chat', (req, res) =>{
+    res.render('socket_vue.ejs');
 })
 
 
@@ -282,8 +253,11 @@ MongoClient.connect('mongodb://127.0.0.1:27017', (err, database) => {
     if (err) return console.log(err);
     db = database.db('carnet_adresse');
     // lancement du serveur Express sur le port 8081
-    app.listen(8081, () => {
+    /*app.listen(8081, () => {
         console.log('connexion à la BD et on écoute sur le port 8081')
-    });
-
+    });*/
+    server.listen(8081, (err) => {
+        console.log(err);
+        console.log('connexion à la BD et on écoute sur le port 8081')
+     })
 });

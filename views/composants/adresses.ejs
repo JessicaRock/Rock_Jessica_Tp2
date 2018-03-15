@@ -38,7 +38,7 @@
 				<% } %>
 		</table>
 	<% } else { %>
-		<h2>Aucun membre n'est enregistré.</h2>
+		<h2><% __('aucunMembre') %></h2>
 	<% } %>
 
 	<nav id="gererAdd">
@@ -47,15 +47,9 @@
 			<li><a href="http://localhost:8081/vider"><%= __('vider') %></a></li>
 		</ul>
 	</nav>
-	<form name="formModif" id='formModif' action="/modifier" method="POST">
-		<input type="hidden" name="_id">
-		<input type="hidden" name="prenom">
-		<input type="hidden" name="nom">
-		<input type="hidden" name="telephone">
-		<input type="hidden" name="courriel">
-	</form>
+
 	<h1><%= __('inscription') %></h1>
-	<form name="formAjout" action="/ajouter_ajax" method="GET">
+	<form id="formAdd" name="formAjout" action="/ajouter_ajax" method="POST">
 		<label>
 			<%= __('prenom') %>:
 			<input type="text" name="prenom">
@@ -72,7 +66,7 @@
 			<%= __('courriel') %>:
 			<input type="text" name="courriel">
 		</label>
-		<input type="submit" value="<%= __('envoyer') %>" class="bouton">
+		<input type="button" value="<%= __('envoyer') %>" id="btnAddForm">
 	</form>
 </div>
 
