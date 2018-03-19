@@ -33,6 +33,44 @@ body {
         color: #fff;
         text-decoration: none;
     }
+
+
+
+    input[type='text'] {
+        padding: 5px;
+        color: @mauveFonce;
+    }
+    input[type='submit'], button {
+        background-color: @vert;
+        border: 2px outset @vertFonce;
+        padding: 10px;
+        font-family: Open Sans;
+        font-size: 12px;
+        margin: 10px auto;
+        color: @jaune;
+        transition: all 0.3s;
+        cursor: pointer;
+        &:hover {
+            background-color: @vertFonce;
+            color: @jaune;
+            border: 3px inset @vertFonce;
+            margin: 9px auto;
+        }
+    }
+    button {
+        margin: 1px;
+        
+        &:hover {
+            margin: 0;
+        }
+    }
+    input:focus {
+        border: 2px solid @jaune;
+        outline: none;
+    }
+
+
+
     header {
         display: flex;
         flex-flow: column;
@@ -129,6 +167,7 @@ body {
                 }
             }
         }
+
         form {
             display: flex;
             flex-flow: column;
@@ -143,37 +182,31 @@ body {
                     margin-left: 30px;
                 }
             }
-            input[type='text'] {
-                padding: 5px;
-                color: @mauveFonce;
-            }
-            input[type='submit'] {
-                background-color: @vert;
-                border: 2px outset @vertFonce;
-                padding: 10px;
-                font-family: Open Sans;
-                font-size: 12px;
-                margin: 10px auto;
-                color: @jaune;
-                transition: all 0.3s;
-                cursor: pointer;
-                &:hover {
-                    background-color: @vertFonce;
-                    color: @jaune;
-                    border: 3px inset @vertFonce;
-                    margin: 9px auto;
-                }
-            }
-            input:focus {
-                border: 2px solid @jaune;
-                outline: none;
-            }
             &#formModif {
                 padding: 0;
                 margin: 0;
             }
         }
     }
+
+
+
+    section {
+        &#enregistrement {
+            display: flex;
+            justify-content: center;
+
+            input {
+                margin-right: 20px;
+            }
+        }
+
+        &#chat {
+            background-color: red;
+        }
+    }
+
+
     footer {
         background-color: @vertFonce;
         text-align: center;

@@ -3,19 +3,10 @@ THÈME DE COULEUR
 ********************/
 body {
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: space-between;
   background-color: #2b112e;
   background-image: url(img/bg.png);
   background-repeat: repeat-x;
@@ -37,17 +28,43 @@ body a {
   color: #fff;
   text-decoration: none;
 }
+body input[type='text'] {
+  padding: 5px;
+  color: #2b112e;
+}
+body input[type='submit'],
+body button {
+  background-color: #2ad1a8;
+  border: 2px outset #31826e;
+  padding: 10px;
+  font-family: Open Sans;
+  font-size: 12px;
+  margin: 10px auto;
+  color: #ffd861;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+body input[type='submit']:hover,
+body button:hover {
+  background-color: #31826e;
+  color: #ffd861;
+  border: 3px inset #31826e;
+  margin: 9px auto;
+}
+body button {
+  margin: 1px;
+}
+body button:hover {
+  margin: 0;
+}
+body input:focus {
+  border: 2px solid #ffd861;
+  outline: none;
+}
 body header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-flow: column;
+  align-items: flex-start;
   padding: 30px;
   padding-bottom: 0;
   background-color: #31826e;
@@ -57,8 +74,6 @@ body header h1 {
   font-size: 35px;
 }
 body header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   list-style-type: none;
   margin: 0;
@@ -69,23 +84,15 @@ body header nav ul li {
   margin-right: 30px;
 }
 body header nav ul li a {
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 body header nav ul li a:hover {
   color: #ffd861;
 }
 body div#adresse {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: column;
+  align-items: center;
   padding: 50px;
 }
 body div#adresse h1 {
@@ -129,18 +136,13 @@ body div#adresse nav#gererAdd {
   width: 60%;
 }
 body div#adresse nav#gererAdd ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 body div#adresse nav#gererAdd ul li {
   list-style-type: none;
   background-color: #2b112e;
   padding: 20px 70px;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 body div#adresse nav#gererAdd ul li:hover {
@@ -151,58 +153,33 @@ body div#adresse nav#gererAdd ul li a {
   text-transform: uppercase;
 }
 body div#adresse form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  flex-flow: column;
   margin: 30px;
   padding: 15px;
   background-color: #2b112e;
 }
 body div#adresse form label {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding: 10px;
 }
 body div#adresse form label input {
   margin-left: 30px;
 }
-body div#adresse form input[type='text'] {
-  padding: 5px;
-  color: #2b112e;
-}
-body div#adresse form input[type='submit'] {
-  background-color: #2ad1a8;
-  border: 2px outset #31826e;
-  padding: 10px;
-  font-family: Open Sans;
-  font-size: 12px;
-  margin: 10px auto;
-  color: #ffd861;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-body div#adresse form input[type='submit']:hover {
-  background-color: #31826e;
-  color: #ffd861;
-  border: 3px inset #31826e;
-  margin: 9px auto;
-}
-body div#adresse form input:focus {
-  border: 2px solid #ffd861;
-  outline: none;
-}
 body div#adresse form#formModif {
   padding: 0;
   margin: 0;
+}
+body section#enregistrement {
+  display: flex;
+  justify-content: center;
+}
+body section#enregistrement input {
+  margin-right: 20px;
+}
+body section#chat {
+  background-color: red;
 }
 body footer {
   background-color: #31826e;
@@ -210,19 +187,14 @@ body footer {
 }
 @media screen and (min-width: 625px) {
   body header {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   body header nav {
     margin: 0;
     margin-top: 20px;
   }
   body header nav ul {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row;
-            flex-flow: row;
+    flex-flow: row;
   }
   body header nav ul li {
     margin: 0;
@@ -231,16 +203,9 @@ body footer {
 }
 @media screen and (min-width: 1024px) {
   body header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row;
-            flex-flow: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-end;
   }
   body header nav {
     margin-top: 0;
