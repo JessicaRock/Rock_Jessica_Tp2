@@ -16,7 +16,7 @@ function supprimer() {
 
 
 			let tr = aoBtnSupprimer[i].parentNode.parentNode;
-			console.log(tr.children[0]);
+			console.log(tr.children[0].children[0].innerHTML);
 			let id = tr.children[0].children[0].innerHTML;
 
 			
@@ -24,7 +24,7 @@ function supprimer() {
 				"_id": id
 			}
 
-			console.log(data)
+			console.log(data);
 			sData = JSON.stringify(data);
 			xhr.setRequestHeader('Content-type', 'application/json');
 			xhr.send(sData);

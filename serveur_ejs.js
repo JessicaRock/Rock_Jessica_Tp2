@@ -109,9 +109,9 @@ app.post('/modifier_ajax', (req,res) => {
 
 app.post('/supprimer_ajax', (req, res) => {
     console.log('***********')
-    console.log(typeof req.body._id)
-    console.log(ObjectID(req.body._id))
-    req.body._id = ObjectID(JSON.parse(req.body._id));
+    console.log(req.body._id)
+    //console.log(ObjectID(req.body._id))
+    req.body._id = ObjectID(req.body._id);
     db.collection('adresse').findOneAndDelete({"_id": req.body._id}, (err, resultat) => {
 
     if (err) return console.log(err)

@@ -11,7 +11,7 @@ function modifier() {
 
 
 			let tr = aoBtnModifier[i].parentNode.parentNode;
-			let id = tr.children[0].innerHTML;
+			let id = tr.children[0].children[0].innerHTML;
 			let prenom = tr.children[1].innerHTML;
 			let nom = tr.children[2].innerHTML;
 			let telephone = tr.children[3].innerHTML;

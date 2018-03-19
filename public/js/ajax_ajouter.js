@@ -70,7 +70,7 @@ function traiterRequest(e) {
 				oTd.innerHTML = elm;
 				oTd.setAttribute('contenteditable', true);
 			} else {
-				oTd.innerHTML = '<a href="/afficher/<%= elm._id %>">' + elm + ' </a>';
+				oTd.innerHTML = '<a href="/afficher/<%= elm._id %>">' + elm + '</a>';
 			}
 			oTr.appendChild(oTd);
 		}
