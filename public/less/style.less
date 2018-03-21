@@ -19,7 +19,7 @@ body {
     background-position: bottom;
     background-attachment: fixed;
     color: #fff;
-    font-family: Roboto;
+    font-family: 'Roboto';
     h1 {
         color: @vert;
         margin: 0;
@@ -69,6 +69,42 @@ body {
         outline: none;
     }
 
+    table {
+        background-color: @mauveFonce;
+        border-collapse: collapse;
+        margin: 30px;
+        tr {
+            &:nth-child(odd) {
+                background-color: @vertFonce;
+                th:focus,
+                td:focus {
+                    background-color: @vert;
+                }
+            }
+            &:nth-child(even) {
+                th:focus,
+                td:focus {
+                    background-color: @mauve;
+                }
+            }
+            th,
+            td {
+                border: 2px solid @vertFonce;
+                padding: 10px;
+                text-align: center;
+            }
+            th a {
+                color: @jaune;
+                text-transform: uppercase;
+                font-size: 1.2em;
+            }
+            td a {
+                text-decoration: none;
+                color: @jaune;
+            }
+        }
+    }
+
 
 
     header {
@@ -112,41 +148,7 @@ body {
         a {
             cursor: pointer;
         }
-        table {
-            background-color: @mauveFonce;
-            border-collapse: collapse;
-            margin: 30px;
-            tr {
-                &:nth-child(odd) {
-                    background-color: @vertFonce;
-                    th:focus,
-                    td:focus {
-                        background-color: @vert;
-                    }
-                }
-                &:nth-child(even) {
-                    th:focus,
-                    td:focus {
-                        background-color: @mauve;
-                    }
-                }
-                th,
-                td {
-                    border: 2px solid @vertFonce;
-                    padding: 10px;
-                    text-align: center;
-                }
-                th a {
-                    color: @jaune;
-                    text-transform: uppercase;
-                    font-size: 1.2em;
-                }
-                td a {
-                    text-decoration: none;
-                    color: @jaune;
-                }
-            }
-        }
+
         nav#gererAdd {
             width: 60%;
             ul {
@@ -202,7 +204,21 @@ body {
         }
 
         &#chat {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
             background-color: red;
+
+            table{
+                &#liste_util {
+                    td {
+                        padding: 20px;
+                    }
+                }
+
+                &#message {
+                }
+            }
         }
     }
 

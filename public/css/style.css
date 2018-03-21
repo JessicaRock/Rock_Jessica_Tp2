@@ -13,7 +13,7 @@ body {
   background-position: bottom;
   background-attachment: fixed;
   color: #fff;
-  font-family: Roboto;
+  font-family: 'Roboto';
 }
 body h1 {
   color: #2ad1a8;
@@ -61,6 +61,37 @@ body input:focus {
   border: 2px solid #ffd861;
   outline: none;
 }
+body table {
+  background-color: #2b112e;
+  border-collapse: collapse;
+  margin: 30px;
+}
+body table tr:nth-child(odd) {
+  background-color: #31826e;
+}
+body table tr:nth-child(odd) th:focus,
+body table tr:nth-child(odd) td:focus {
+  background-color: #2ad1a8;
+}
+body table tr:nth-child(even) th:focus,
+body table tr:nth-child(even) td:focus {
+  background-color: #7c2e85;
+}
+body table tr th,
+body table tr td {
+  border: 2px solid #31826e;
+  padding: 10px;
+  text-align: center;
+}
+body table tr th a {
+  color: #ffd861;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+body table tr td a {
+  text-decoration: none;
+  color: #ffd861;
+}
 body header {
   display: flex;
   flex-flow: column;
@@ -100,37 +131,6 @@ body div#adresse h1 {
 }
 body div#adresse a {
   cursor: pointer;
-}
-body div#adresse table {
-  background-color: #2b112e;
-  border-collapse: collapse;
-  margin: 30px;
-}
-body div#adresse table tr:nth-child(odd) {
-  background-color: #31826e;
-}
-body div#adresse table tr:nth-child(odd) th:focus,
-body div#adresse table tr:nth-child(odd) td:focus {
-  background-color: #2ad1a8;
-}
-body div#adresse table tr:nth-child(even) th:focus,
-body div#adresse table tr:nth-child(even) td:focus {
-  background-color: #7c2e85;
-}
-body div#adresse table tr th,
-body div#adresse table tr td {
-  border: 2px solid #31826e;
-  padding: 10px;
-  text-align: center;
-}
-body div#adresse table tr th a {
-  color: #ffd861;
-  text-transform: uppercase;
-  font-size: 1.2em;
-}
-body div#adresse table tr td a {
-  text-decoration: none;
-  color: #ffd861;
 }
 body div#adresse nav#gererAdd {
   width: 60%;
@@ -179,7 +179,13 @@ body section#enregistrement input {
   margin-right: 20px;
 }
 body section#chat {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   background-color: red;
+}
+body section#chat table#liste_util td {
+  padding: 20px;
 }
 body footer {
   background-color: #31826e;
