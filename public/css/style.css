@@ -28,6 +28,9 @@ body a {
   color: #fff;
   text-decoration: none;
 }
+body li {
+  list-style-type: none;
+}
 body input[type='text'] {
   padding: 5px;
   color: #2b112e;
@@ -186,6 +189,10 @@ body section#chat {
 }
 body section#chat table#liste_util td {
   padding: 20px;
+}
+body section#chat table#message {
+  width: 50vw;
+  min-width: 200px;
 }
 body footer {
   background-color: #31826e;
