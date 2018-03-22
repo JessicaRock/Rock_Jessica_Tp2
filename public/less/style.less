@@ -43,7 +43,7 @@ body {
         padding: 5px;
         color: @mauveFonce;
     }
-    input[type='submit'], button {
+    input[type='submit'], input[type='button'], button {
         background-color: @vert;
         border: 2px outset @vertFonce;
         padding: 10px;
@@ -206,24 +206,54 @@ body {
             }
         }
 
+
         &#chat {
             display: flex;
             flex-flow: column;
             align-items: center;
-            background-color: red;
 
             table{
                 &#liste_util {
                     td {
                         padding: 20px;
+
+                        &:nth-child(2) {
+                            color: @jaune;
+                        }
                     }
                 }
+            }
 
-                &#message {
-                    width: 50vw;
-                    min-width: 200px;
+            div#message {
+                width: 50vw;
+                min-width: 200px;
+
+                max-height: 40vh;
+                overflow: scroll;
+                margin-bottom: 20px;
+
+                div {
+                    padding: 3px 10px;
+                    border-radius: 10px;
+                    margin: 10px 0;
+
+                    p:nth-child(1) {
+                        color: @jaune;
+                    }
+                
+                    &:nth-child(1) {
+                        border-radius: 0;
+                        background-color: @mauveFonce;
+
+                        p {
+                            text-align: center;
+                            color: #fff;
+                            font-weight: bold;
+                        }
+                    }
                 }
             }
+        
         }
     }
 

@@ -1,16 +1,21 @@
-<h1>Clavardage</h1>
+<h1><%= __('clavardage') %></h1>
 <section id="enregistrement">
 	<input type="text">
-	<button onclick="enregistrement()">Enregistrement</button>
+	<button onclick="enregistrement()"><%= __('inscription') %></button>
 </section>
 
 
 <section id='chat' style='display:none;'>
 	<table id='liste_util'></table>
-	<table id='message'></table>
+	<!--table id='message'></table-->
+	<div id="message">
+		<div>
+			<p><%= __('bienvenueChat') %></p>
+		</div>
+	</div>
 	<section id='messageATransmettre'>
 		<input type="text" name="txtMessage">
-		<button onclick="transmettreUnMessage()">Transmettre</button>
+		<button onclick="transmettreUnMessage()"><%= __('transmettre') %></button>
 	</section>
 </section>
 
@@ -48,7 +53,7 @@
 				afficheTableUser(data);
 			})
 			socket.on('valideMessage', function(data){
-				afficherMsg(data, '#FFD861');
+				afficherMsg(data, '#7c2e85');
 			})
 			socket.on('diffuserMessage', function(data){
 				afficherMsg(data, '#2AD1A8');
@@ -76,12 +81,23 @@
 	}
 	/* --------------------------- AFFICHER UN MESSAGE ------------------------------- */
 	function afficherMsg(data, couleur) {
+		/*
 		let tabMessages = document.getElementById('message');
 		let sChaine = tabMessages.innerHTML;
 		sChaine += '<tr><th>' + data.user + '</th><td>' + data.msg + '</td></tr>';
 		tabMessages.innerHTML = sChaine;
 		aTr = tabMessages.querySelectorAll('tr');
 		aTr[aTr.length-1].style.backgroundColor = couleur;
+		*/
+
+		let tabMessages = document.getElementById('message');
+		let sChaine = tabMessages.innerHTML;
+		sChaine += '<div class="msg"><p>' + data.user + '</p><p>' + data.msg + '</p></div>';
+		tabMessages.innerHTML = sChaine;
+		aDiv = tabMessages.querySelectorAll('.msg');
+		aDiv[aDiv.length-1].style.backgroundColor = couleur;
+		document.querySelector('#messageATransmettre input').value = '';
+
 	}
 	/* --------------------------- AFFICHER LE TABLEAU DES USERS ------------------------------- */
 	function afficheTableUser(data) {

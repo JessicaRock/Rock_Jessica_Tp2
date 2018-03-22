@@ -15,5 +15,8 @@
 	"supprimer": "Supprimer",
 	"rechercher": "Rechercher",
 	"envoyer": "Envoyer",
-	"aucunMembre": "Aucun membre n'est enregistré."
+	"aucunMembre": "Aucun membre n'est enregistré.",
+	"clavardage": "Clavardage",
+	"transmettre": "Transmettre",
+	"bienvenueChat": "Bienvenue dans la zone de clavardage. Amusez-vous!"
 }

@@ -15,5 +15,8 @@
 	"supprimer": "Delete",
 	"rechercher": "Find",
 	"envoyer": "Submit",
-	"aucunMembre": "There are no members registered."
+	"aucunMembre": "There are no members registered.",
+	"clavardage": "Chat",
+	"transmettre": "Send",
+	"bienvenueChat": "Welcome in the chat zone. Have fun!"
 }

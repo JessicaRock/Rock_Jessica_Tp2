@@ -36,6 +36,7 @@ body input[type='text'] {
   color: #2b112e;
 }
 body input[type='submit'],
+body input[type='button'],
 body button {
   background-color: #2ad1a8;
   border: 2px outset #31826e;
@@ -48,6 +49,7 @@ body button {
   cursor: pointer;
 }
 body input[type='submit']:hover,
+body input[type='button']:hover,
 body button:hover {
   background-color: #31826e;
   color: #ffd861;
@@ -185,14 +187,35 @@ body section#chat {
   display: flex;
   flex-flow: column;
   align-items: center;
-  background-color: red;
 }
 body section#chat table#liste_util td {
   padding: 20px;
 }
-body section#chat table#message {
+body section#chat table#liste_util td:nth-child(2) {
+  color: #ffd861;
+}
+body section#chat div#message {
   width: 50vw;
   min-width: 200px;
+  max-height: 40vh;
+  overflow: scroll;
+}
+body section#chat div#message div {
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+body section#chat div#message div p:nth-child(1) {
+  color: #ffd861;
+}
+body section#chat div#message div:nth-child(1) {
+  border-radius: 0;
+  background-color: #2b112e;
+}
+body section#chat div#message div:nth-child(1) p {
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
 }
 body footer {
   background-color: #31826e;
