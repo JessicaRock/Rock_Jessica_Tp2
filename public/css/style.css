@@ -3,9 +3,18 @@ THÈME DE COULEUR
 ********************/
 body {
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
   align-items: stretch;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   background-color: #2b112e;
   background-image: url(img/bg.png);
@@ -45,6 +54,7 @@ body button {
   font-size: 12px;
   margin: 10px auto;
   color: #ffd861;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
 }
@@ -98,8 +108,15 @@ body table tr td a {
   color: #ffd861;
 }
 body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   padding: 30px;
   padding-bottom: 0;
@@ -110,6 +127,8 @@ body header h1 {
   font-size: 35px;
 }
 body header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style-type: none;
   margin: 0;
@@ -120,14 +139,22 @@ body header nav ul li {
   margin-right: 30px;
 }
 body header nav ul li a {
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 body header nav ul li a:hover {
   color: #ffd861;
 }
 body div#adresse {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 50px;
 }
@@ -141,13 +168,18 @@ body div#adresse nav#gererAdd {
   width: 60%;
 }
 body div#adresse nav#gererAdd ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 body div#adresse nav#gererAdd ul li {
   list-style-type: none;
   background-color: #2b112e;
   padding: 20px 70px;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 body div#adresse nav#gererAdd ul li:hover {
@@ -158,14 +190,23 @@ body div#adresse nav#gererAdd ul li a {
   text-transform: uppercase;
 }
 body div#adresse form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
   margin: 30px;
   padding: 15px;
   background-color: #2b112e;
 }
 body div#adresse form label {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 10px;
 }
@@ -177,15 +218,26 @@ body div#adresse form#formModif {
   margin: 0;
 }
 body section#enregistrement {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 body section#enregistrement input {
   margin-right: 20px;
 }
 body section#chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
   flex-flow: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 body section#chat table#liste_util td {
@@ -199,6 +251,7 @@ body section#chat div#message {
   min-width: 200px;
   max-height: 40vh;
   overflow: scroll;
+  margin-bottom: 20px;
 }
 body section#chat div#message div {
   padding: 3px 10px;
@@ -223,6 +276,8 @@ body footer {
 }
 @media screen and (min-width: 625px) {
   body header {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
   body header nav {
@@ -230,6 +285,9 @@ body footer {
     margin-top: 20px;
   }
   body header nav ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row;
     flex-flow: row;
   }
   body header nav ul li {
@@ -239,8 +297,15 @@ body footer {
 }
 @media screen and (min-width: 1024px) {
   body header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row;
     flex-flow: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
   }
   body header nav {

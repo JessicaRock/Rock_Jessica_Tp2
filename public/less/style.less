@@ -9,9 +9,18 @@ THÈME DE COULEUR
 @vertFonce: #31826E;
 body {
     min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
     flex-flow: column;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     background-color: @mauveFonce;
     background-image: url(img/bg.png);
@@ -33,17 +42,16 @@ body {
         color: #fff;
         text-decoration: none;
     }
-
-
     li {
         list-style-type: none;
     }
-
     input[type='text'] {
         padding: 5px;
         color: @mauveFonce;
     }
-    input[type='submit'], input[type='button'], button {
+    input[type='submit'],
+    input[type='button'],
+    button {
         background-color: @vert;
         border: 2px outset @vertFonce;
         padding: 10px;
@@ -51,6 +59,7 @@ body {
         font-size: 12px;
         margin: 10px auto;
         color: @jaune;
+        -webkit-transition: all 0.3s;
         transition: all 0.3s;
         cursor: pointer;
         &:hover {
@@ -62,7 +71,6 @@ body {
     }
     button {
         margin: 1px;
-        
         &:hover {
             margin: 0;
         }
@@ -71,7 +79,6 @@ body {
         border: 2px solid @jaune;
         outline: none;
     }
-
     table {
         background-color: @mauveFonce;
         border-collapse: collapse;
@@ -107,12 +114,16 @@ body {
             }
         }
     }
-
-
-
     header {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: column;
         flex-flow: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
         padding: 30px;
         padding-bottom: 0;
@@ -123,6 +134,8 @@ body {
         }
         nav {
             ul {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
                 list-style-type: none;
                 margin: 0;
@@ -131,6 +144,7 @@ body {
                     padding: 5px 0px;
                     margin-right: 30px;
                     a {
+                        -webkit-transition: all 0.3s;
                         transition: all 0.3s;
                         &:hover {
                             color: @jaune;
@@ -141,8 +155,15 @@ body {
         }
     }
     div#adresse {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: column;
         flex-flow: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         padding: 50px;
         h1 {
@@ -151,16 +172,20 @@ body {
         a {
             cursor: pointer;
         }
-
         nav#gererAdd {
             width: 60%;
             ul {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
                 justify-content: space-between;
                 li {
                     list-style-type: none;
                     background-color: @mauveFonce;
                     padding: 20px 70px;
+                    -webkit-transition: all 0.3s;
                     transition: all 0.3s;
                     &:hover {
                         background-color: @mauve;
@@ -172,15 +197,23 @@ body {
                 }
             }
         }
-
         form {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-flow: column;
             flex-flow: column;
             margin: 30px;
             padding: 15px;
             background-color: @mauveFonce;
             label {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
                 justify-content: space-between;
                 padding: 10px;
                 input {
@@ -193,58 +226,55 @@ body {
             }
         }
     }
-
-
-
     section {
         &#enregistrement {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
-
             input {
                 margin-right: 20px;
             }
         }
-
-
         &#chat {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-flow: column;
             flex-flow: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
-
-            table{
+            table {
                 &#liste_util {
                     td {
                         padding: 20px;
-
                         &:nth-child(2) {
                             color: @jaune;
                         }
                     }
                 }
             }
-
             div#message {
                 width: 50vw;
                 min-width: 200px;
-
                 max-height: 40vh;
                 overflow: scroll;
                 margin-bottom: 20px;
-
                 div {
                     padding: 3px 10px;
                     border-radius: 10px;
                     margin: 10px 0;
-
                     p:nth-child(1) {
                         color: @jaune;
                     }
-                
                     &:nth-child(1) {
                         border-radius: 0;
                         background-color: @mauveFonce;
-
                         p {
                             text-align: center;
                             color: #fff;
@@ -253,11 +283,8 @@ body {
                     }
                 }
             }
-        
         }
     }
-
-
     footer {
         background-color: @vertFonce;
         text-align: center;
@@ -267,11 +294,16 @@ body {
 @media screen and (min-width: 625px) {
     body {
         header {
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             nav {
                 margin: 0;
                 margin-top: 20px;
                 ul {
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                    -ms-flex-flow: row;
                     flex-flow: row;
                     li {
                         margin: 0;
@@ -286,8 +318,15 @@ body {
 @media screen and (min-width: 1024px) {
     body {
         header {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-flow: row;
             flex-flow: row;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
+            -webkit-box-align: end;
+            -ms-flex-align: end;
             align-items: flex-end;
             nav {
                 margin-top: 0;
